@@ -110,6 +110,7 @@ h6 {
     .masthead {
         height: 100vh
     }
+
     .masthead h1 {
         font-size: 5.5rem
     }
@@ -273,11 +274,13 @@ h6 {
         max-width: none;
         margin: 0
     }
+
     .portfolio-item .caption {
         -webkit-transition: -webkit-clip-path .25s ease-out, background-color .7s;
         -webkit-clip-path: inset(0);
         clip-path: inset(0)
     }
+
     .portfolio-item .caption .caption-content {
         -webkit-transition: opacity .25s;
         transition: opacity .25s;
@@ -285,15 +288,18 @@ h6 {
         margin-right: 5rem;
         margin-bottom: 5rem
     }
+
     .portfolio-item img {
         -webkit-transition: -webkit-clip-path .25s ease-out;
         -webkit-clip-path: inset(-1px);
         clip-path: inset(-1px)
     }
+
     .portfolio-item:hover img {
         -webkit-clip-path: inset(2rem);
         clip-path: inset(2rem)
     }
+
     .portfolio-item:hover .caption {
         background-color: rgba(29, 128, 159, .9);
         -webkit-clip-path: inset(2rem);
@@ -335,34 +341,34 @@ a:hover {
 }
 
 .btn-primary {
-    background-color: #1d809f!important;
-    border-color: #000!important;
-    color: #fff!important
+    background-color: #1d809f !important;
+    border-color: #000 !important;
+    color: #fff !important
 }
 
 .btn-primary:active,
 .btn-primary:focus,
 .btn-primary:hover {
-    background-color: #155d74!important;
-    border-color: #155d74!important
+    background-color: #155d74 !important;
+    border-color: #155d74 !important
 }
 
 .btn-secondary {
-    background-color: #ecb807!important;
-    border-color: #ecb807!important;
-    color: #fff!important
+    background-color: #ecb807 !important;
+    border-color: #ecb807 !important;
+    color: #fff !important
 }
 
 .btn-secondary:active,
 .btn-secondary:focus,
 .btn-secondary:hover {
-    background-color: #ba9106!important;
-    border-color: #ba9106!important
+    background-color: #ba9106 !important;
+    border-color: #ba9106 !important
 }
 
 .btn-dark {
     border-color: #000;
-    color: #fff!important
+    color: #fff !important
 }
 
 .btn {
@@ -372,23 +378,23 @@ a:hover {
 }
 
 .bg-primary {
-    background-color: #1d809f!important
+    background-color: #1d809f !important
 }
 
 .bg-secondary {
-    background-color: #f04b98!important
+    background-color: #f04b98 !important
 }
 
 .bg-tertiary {
-    background-color: #960df1!important
+    background-color: #960df1 !important
 }
 
 .text-primary {
-    color: #1d809f!important
+    color: #1d809f !important
 }
 
 .text-secondary {
-    color: #ecb807!important
+    color: #ecb807 !important
 }
 
 .mapouter {
