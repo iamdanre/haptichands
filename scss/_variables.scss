@@ -2,17 +2,53 @@
 
 // Restated Bootstrap Variables
 
-$white: #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #868e96 !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black: #000 !default;
+// Light theme color variables
+$light-background: #fff !default;
+$light-text: #212529 !default;
+$light-primary: #1D809F !default;
+$light-secondary: #ecb807 !default;
+$light-gray-100: #f8f9fa !default;
+$light-gray-200: #e9ecef !default;
+$light-gray-300: #dee2e6 !default;
+$light-gray-400: #ced4da !default;
+$light-gray-500: #adb5bd !default;
+$light-gray-600: #868e96 !default;
+$light-gray-700: #495057 !default;
+$light-gray-800: #343a40 !default;
+$light-gray-900: #212529 !default;
+$light-black: #000 !default;
 
-$primary: #1D809F !default;
-$secondary: #ecb807 !default;
+// Dark theme color variables
+$dark-background: #121212 !default;
+$dark-text: #e0e0e0 !default;
+$dark-primary: #2998bc !default; // A slightly lighter shade of the light primary for better contrast
+$dark-secondary: #ffc107 !default; // Keep secondary vibrant, or adjust as needed
+$dark-gray-100: #2a2a2a !default;
+$dark-gray-200: #3c3c3c !default;
+$dark-gray-300: #4f4f4f !default;
+$dark-gray-400: #616161 !default;
+$dark-gray-500: #737373 !default;
+$dark-gray-600: #858585 !default;
+$dark-gray-700: #979797 !default;
+$dark-gray-800: #a9a9a9 !default;
+$dark-gray-900: #bbbbbb !default;
+$dark-black: #ffffff !default; // In dark mode, "black" might mean the lightest color
+
+// Restated Bootstrap Variables
+// It's important to check if these are overridden by the theme variables or used directly.
+// For now, we'll assume our theme variables will take precedence.
+
+$white: $light-background !default; // Default to light theme
+$gray-100: $light-gray-100 !default;
+$gray-200: $light-gray-200 !default;
+$gray-300: $light-gray-300 !default;
+$gray-400: $light-gray-400 !default;
+$gray-500: $light-gray-500 !default;
+$gray-600: $light-gray-600 !default;
+$gray-700: $light-gray-700 !default;
+$gray-800: $light-gray-800 !default;
+$gray-900: $light-gray-900 !default;
+$black: $light-black !default;
+
+$primary: $light-primary !default;
+$secondary: $light-secondary !default;

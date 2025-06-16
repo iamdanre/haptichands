@@ -1,0 +1,7 @@
+node_modules/
+vendor/
+# Keep CSS files that are committed if they are build artifacts
+# but if they are always rebuilt, they could be ignored too.
+# For now, assume they are part of the repo.
+# css/stylish-portfolio.css
+# css/stylish-portfolio.min.css

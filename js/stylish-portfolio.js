@@ -64,3 +64,51 @@
 // }
 // // Enable map zooming with mouse scroll when the user clicks the map
 // $('.map').on('click', onMapClickHandler);
+
+  // Dark Mode Toggle
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+  // Function to apply theme
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      body.classList.add('dark-mode');
+      if (darkModeToggle) darkModeToggle.textContent = 'Enable Light Mode';
+    } else {
+      body.classList.remove('dark-mode');
+      if (darkModeToggle) darkModeToggle.textContent = 'Enable Dark Mode';
+    }
+  }
+
+  // Check localStorage for saved theme
+  let currentTheme = localStorage.getItem('theme');
+
+  // If no saved theme, check OS preference
+  if (currentTheme === null) {
+    if (prefersDarkScheme.matches) {
+      currentTheme = 'dark';
+    } else {
+      currentTheme = 'light';
+    }
+  }
+
+  // Apply the determined theme
+  applyTheme(currentTheme);
+
+  // Add event listener for the toggle button
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', function () {
+      let newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+  }
+
+  // Optional: Listen for changes in OS preference (e.g., if user changes OS theme while page is open)
+  prefersDarkScheme.addEventListener('change', (e) => {
+    // Only change if no explicit theme has been set by the user via the toggle
+    if (localStorage.getItem('theme') === null) {
+      applyTheme(e.matches ? 'dark' : 'light');
+    }
+  });

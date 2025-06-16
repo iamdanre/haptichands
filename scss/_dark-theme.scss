@@ -1,0 +1,243 @@
+// Dark Theme Styles
+// These styles are applied when the body has the .dark-mode class
+
+@import "_variables"; // Ensure variables are accessible
+
+.dark-mode {
+  // General elements
+  body {
+    background-color: $dark-background;
+    color: $dark-text;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $dark-text;
+  }
+
+  p {
+    color: $dark-text;
+  }
+
+  a {
+    color: $dark-primary;
+    &:hover {
+      color: lighten($dark-primary, 10%);
+    }
+  }
+
+  // Specific components from index.html
+  .masthead {
+    background-color: $dark-gray-800; // A dark background for the masthead
+    color: $dark-text;
+    // Ensure text shadows or overlays are adjusted if they make text hard to read
+    h1, .h1, p, .p {
+      color: $dark-text; // Ensure text within masthead is also dark-theme compliant
+    }
+  }
+
+  #sidebar-wrapper {
+    background-color: $dark-gray-900;
+    .sidebar-nav a {
+      color: $dark-text;
+      &:hover {
+        color: $dark-primary;
+        background: $dark-gray-700;
+      }
+    }
+    .sidebar-brand {
+      color: $dark-primary;
+      background: $dark-gray-800;
+      &:hover {
+        color: $dark-primary;
+        background: $dark-gray-700;
+      }
+    }
+  }
+
+  .content-section {
+    background-color: $dark-background;
+    color: $dark-text;
+    &.bg-light {
+      background-color: $dark-gray-200 !important; // Override light background
+      color: $dark-text; // Ensure text is readable
+       p, h1, h2, h3, h4, h5, h6 {
+        color: $dark-text;
+      }
+    }
+    &.bg-primary {
+      background-color: $dark-primary !important;
+      color: $dark-black; // Text on primary background
+      p, h1, h2, h3, h4, h5, h6, a {
+        color: $dark-black;
+      }
+      a:hover {
+        color: lighten($dark-black, 10%);
+      }
+    }
+    &.bg-secondary {
+      background-color: $dark-secondary !important;
+      color: $dark-background; // Text on secondary background
+      p, h1, h2, h3, h4, h5, h6, a {
+        color: $dark-background;
+      }
+       a:hover {
+        color: lighten($dark-background, 10%);
+      }
+    }
+     &.bg-tertiary { // Assuming tertiary might be similar to primary or a new dark shade
+      background-color: $dark-gray-700 !important;
+      color: $dark-text;
+       p, h1, h2, h3, h4, h5, h6 {
+        color: $dark-text;
+      }
+    }
+  }
+
+  .service-icon {
+    background-color: $dark-primary;
+    color: $dark-black; // Icon color on primary background
+    // box-shadow might need adjustment if it's too light/dark
+  }
+
+  .btn {
+    // General button adjustments if needed, e.g., border colors
+    &.btn-primary {
+      background-color: $dark-primary;
+      border-color: $dark-primary;
+      color: $dark-black;
+      &:hover {
+        background-color: lighten($dark-primary, 10%);
+        border-color: lighten($dark-primary, 10%);
+      }
+    }
+    &.btn-dark { // .btn-dark in light mode should become .btn-light in dark mode or similar
+      background-color: $dark-gray-200;
+      border-color: $dark-gray-200;
+      color: $dark-background; // Text on this button
+      &:hover {
+        background-color: lighten($dark-gray-200, 5%);
+      }
+    }
+     &.btn-light { // .btn-light in light mode should become .btn-darker in dark mode
+      background-color: $dark-gray-700;
+      border-color: $dark-gray-700;
+      color: $dark-text;
+      &:hover {
+        background-color: lighten($dark-gray-700, 5%);
+      }
+    }
+    &.btn-outline-primary {
+      color: $dark-primary;
+      border-color: $dark-primary;
+      &:hover {
+        background-color: $dark-primary;
+        color: $dark-black;
+      }
+    }
+    &.btn-outline-dark { // This will be an outline against the dark background
+      color: $dark-text; // Text color for the button
+      border-color: $dark-gray-500; // Border that shows against dark background
+      &:hover {
+        background-color: $dark-gray-500;
+        color: $dark-background; // Text color on hover
+      }
+    }
+    &.btn-outline-light { // This will be an outline against the dark background
+      color: $dark-gray-300;
+      border-color: $dark-gray-300;
+      &:hover {
+        background-color: $dark-gray-300;
+        color: $dark-background;
+      }
+    }
+    &.btn-outline-success { // Assuming success color needs a dark mode variant
+        color: #28a745; // Standard success green, might need a $dark-success variable
+        border-color: #28a745;
+        &:hover {
+            background-color: #28a745;
+            color: $dark-black;
+        }
+    }
+  }
+
+  .card {
+    background-color: $dark-gray-800;
+    border-color: $dark-gray-700;
+    color: $dark-text;
+    .card-header, .card-body, .card-footer {
+       color: $dark-text;
+       border-color: $dark-gray-700; // ensure internal borders also adapt
+    }
+  }
+
+  .table {
+    color: $dark-text;
+    background-color: $dark-gray-800; // Table background
+    th, td {
+      border-color: $dark-gray-700;
+      color: $dark-text;
+    }
+    &.table-bordered {
+      border-color: $dark-gray-600;
+    }
+    thead {
+      // Standard thead
+      th {
+         color: $dark-text;
+      }
+      // thead-dark variant
+      &.thead-dark th {
+        background-color: $dark-gray-900; // Darker header for table
+        border-color: $dark-gray-900;
+        color: $dark-text;
+      }
+    }
+     &.table-striped {
+      tbody tr:nth-of-type(odd) {
+        background-color: rgba($dark-gray-700, 0.5); // Striped effect for dark mode
+      }
+    }
+  }
+
+  footer.footer {
+    background-color: $dark-gray-900;
+    color: $dark-text;
+    .text-muted {
+      color: $dark-gray-500 !important;
+    }
+  }
+
+  .scroll-to-top {
+    background: rgba($dark-primary, 0.5);
+    color: $dark-black;
+    &:hover {
+      background: $dark-primary;
+    }
+  }
+
+  // Ensure portfolio items and other specific image overlays or text have contrast
+  .portfolio-item .caption {
+    background: rgba($dark-background, 0.7); // Darker overlay
+    .caption-content {
+      h2, p {
+        color: $dark-text;
+      }
+    }
+  }
+
+  // Callout sections if they use default styling
+  .callout {
+    background-color: $dark-gray-700; // Example, adjust as needed
+    color: $dark-text;
+    h1,h2,h3,h4,h5,h6,p,a {
+        color: $dark-text;
+    }
+    a {
+        color: $dark-primary;
+        &:hover {
+            color: lighten($dark-primary, 10%);
+        }
+    }
+  }
+
+}
