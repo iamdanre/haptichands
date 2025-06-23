@@ -1,3 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply font-sans text-gray-700; /* This should work now */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+  /* Sizes from stylish-portfolio.css */
+  .content-section-heading h2 {
+    @apply text-5xl; /* 3rem */
+  }
+  .content-section-heading h3 {
+    @apply text-base uppercase; /* 1rem */
+  }
+  .text-faded-custom {
+    color: rgba(255, 255, 255, .7);
+  }
+
+  /* Specific for sidebar */
+  #sidebar-wrapper {
+    @apply fixed top-0 h-full z-20 bg-haptic-sidebar text-white transition-transform duration-300 ease-in-out;
+    width: 250px;
+    right: -250px; /* Start off-screen */
+    border-left: 1px solid rgba(255, 255, 255, .1);
+  }
+  #sidebar-wrapper.active {
+    right: 0; /* Slide in */
+  }
+  .sidebar-nav {
+    @apply absolute top-0 w-[250px] m-0 p-0 list-none;
+  }
+  .sidebar-nav li.sidebar-brand {
+    @apply text-lg h-[80px] leading-[50px] pt-[15px] pb-[15px] pl-[15px];
+    background: rgba(52, 58, 64, .1);
+  }
+  .sidebar-nav li.sidebar-nav-item a,
+  .sidebar-nav li.sidebar-brand a {
+    @apply block no-underline text-white p-[15px];
+  }
+  .sidebar-nav li.sidebar-nav-item a:hover {
+    background: rgba(255, 255, 255, .2);
+  }
+
+
+  /* Menu Toggle & Scroll to Top Buttons (common styling) */
+  .fixed-action-button {
+    @apply fixed w-[50px] h-[50px] text-center text-white leading-[50px] z-50; /* z-50 or higher for scroll-to-top */
+    background: rgba(52, 58, 64, .5); /* haptic-light-gray-transparent */
+  }
+  .fixed-action-button:hover {
+    background: #343a40; /* haptic-dark-gray */
+  }
+
+  /* Specific for video to be responsive */
+    .video-fluid {
+    @apply w-full h-auto;
+  }
+}
+
+/* Add custom components if needed, or use @layer components */
+@layer components {
+  .btn-custom {
+    @apply font-bold shadow-md transition-colors duration-150;
+  }
+  .btn-xl-custom {
+    @apply py-5 px-10; 
+  }
+  .btn-primary-custom {
+    @apply bg-haptic-primary text-white border-black border; 
+  }
+   .btn-primary-custom:hover, .btn-primary-custom:focus, .btn-primary-custom:active {
+    background-color: #155d74 !important; 
+    border-color: #155d74 !important;
+  }
+
+  .btn-secondary-custom { 
+    @apply bg-haptic-secondary-btn text-white border-haptic-secondary-btn border;
+  }
+  .btn-secondary-custom:hover, .btn-secondary-custom:focus, .btn-secondary-custom:active {
+    background-color: #ba9106 !important; 
+    border-color: #ba9106 !important;
+  }
+
+  .btn-dark-custom {
+    @apply bg-gray-800 text-white border-black border hover:bg-gray-700; /* Uses gray-800 & gray-700 from default palette */
+  }
+}
+
+.masthead-custom-bg {
+  background-image: linear-gradient(90deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.1) 100%), url('/img/main.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

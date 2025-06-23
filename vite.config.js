@@ -1,5 +1,7 @@
-module.exports = {
-  plugins: {
-    "@tailwindcss/postcss": {},
-  },
+import basicSsl from '@vitejs/plugin-basic-ssl';
+
+export default {
+  plugins: [
+    basicSsl(),
+  ],
 };
